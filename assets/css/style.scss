@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #fefcf4 0%, #fffdf4 33.33%, #f6f2f5 38.54%, #f7f3f5 100%), #f7f3f5;
+}
+$color: #550088;
+$color_2: #180330;
+
+@mixin text($x, $y) {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: $x !important;
+    line-height: $y !important;
+    text-align: center;
+    color: $color_2;
+}
+
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+:-webkit-any(article, aside, nav, section) h1 {
+    font-size: unset;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h1 {
+    font-weight: unset;
+}
+// navbar
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 12px;
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+
+        & li {
+            list-style-type: none;
+            padding-right: 48px;
+        }
+        & a {
+            @include text(16px, 25px);
+            text-decoration: none;
+        }
+        li:last-child {
+            padding-right: 0;
+        }
+    }
+
+    .auth {
+        display: flex;
+        align-items: center;
+        & p {
+            padding-right: 24px;
+            @include text(16px, 25px);
+            color: $color_2;
+        }
+        & .btn_1 {
+            border: 1px solid $color;
+            border-radius: 4px;
+            background: transparent;
+            width: 80px;
+            height: 40px;
+            transition: 1s ease;
+            outline: none;
+            &:hover {
+                background-color: $color;
+                color: #fff;
+            }
+        }
+    }
+}
+// end navbar
+
+// header
+.header {
+    @include flex;
+    padding-bottom: 54px;
+
+    .header_txt {
+        @include flex;
+        & h1 {
+            @include text(96px, 110px);
+            padding: 121px 0 34px 0;
+            color: $color_2;
+        }
+        & p {
+            @include text(24px, 37px);
+            & span {
+                color: $color;
+            }
+        }
+    }
+    .header_inp {
+        display: flex;
+        align-items: center;
+        padding-top: 39px;
+
+        .input {
+            width: 236px;
+            height: 42px;
+            background: #ffffff;
+            border: 1px solid #180330;
+            border-radius: 4px 0px 0px 4px;
+            padding-left: 20px;
+        }
+        .btn_2 {
+            background: linear-gradient(180deg, #550088 30.21%, #7800bf 66.15%, #892ffc 100%), #550088;
+            border-radius: 0px 4px 4px 0px;
+            width: 160px;
+            height: 42px;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+    }
+}
+// end header
+
+// about
+.about {
+    .about_content {
+        @include flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 90px;
+    }
+    .img_1 {
+        margin-right: 200px;
+    }
+
+    .img_2 {
+        margin-left: 192px;
+    }
+    .about_txt {
+        & h1 {
+            @include text(36px, 41px);
+        }
+        & p {
+            @include text(20px, 31px);
+            padding: 27px 0 29px 0;
+        }
+        & h6 {
+            @include text(20px, 31px);
+            color: $color;
+        }
+    }
+}
+// end about
+
+// features
+.features_header {
+    @include text(54px, 64px);
+    padding-bottom: 56px;
+    text-align: left;
+    padding-left: 340px;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    .features_txt {
+        position: relative;
+        padding-top: 26px;
+        left: 100px;
+        p {
+            @include text(20px, 31px);
+            text-align: left;
+            padding: 0 0 12px 0;
+            display: flex;
+            & img {
+                margin-right: 18px;
+            }
+        }
+        h6 {
+            @include text(19px, 31px);
+            color: $color;
+            padding-top: 12px;
+            text-align: left;
+        }
+    }
+}
+// end features
+
+// pricing
+.pricing {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f6f2f5 69.27%), #dbbeff;
+    border-radius: 8px;
+    height: 724px;
+    width: 1286.4px;
+    margin: 0 auto;
+    .pricing_header {
+        @include text(36px, 41px);
+        padding: 55px 0 76px 0;
+    }
+    .pricing_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tab_logo {
+        td {
+            padding: 0 55px 48px 0;
+        }
+    }
+    .table_price {
+        td {
+            padding-right: 55px;
+            vertical-align: top;
+            h1 {
+                @include text(16px, 25px);
+                text-align: left;
+            }
+            h5 {
+                @include text(16px, 25px);
+                color: $color;
+            }
+            p {
+                padding-top: 5px;
+            }
+        }
+        p {
+            text-align: center;
+            margin-bottom: 31px;
+        }
+        img {
+            margin-bottom: 44px;
+        }
+        h6 {
+            text-align: center;
+        }
+    }
+    .report {
+        width: 1004px;
+        display: flex;
+        margin: 0 auto;
+        padding-top: 35px;
+        p {
+            @include text(13px, 29px);
+        }
+        span {
+            @include text(13px, 29px);
+            color: $color;
+        }
+    }
+    .end {
+        display: flex;
+        justify-content: center;
+        padding-top: 56px;
+        p {
+            @include text(20px, 31px);
+            color: $color;
+        }
+    }
+}
+// end pricing
+
+// resources
+
+.head_txt {
+    padding-top: 126px;
+    h1 {
+        @include text(56px, 64px);
+    }
+}
+.resources {
+    display: flex;
+    justify-content: center;
+    padding-top: 81px;
+
+    .resources_pink {
+        @include flex;
+        background: #ffdddd;
+        width: 428px;
+        height: 760px;
+        img:nth-child(1) {
+            width: 357px;
+            height: 357px;
+        }
+        img:nth-child(2) {
+            margin: 99px 50px 27px 0;
+        }
+        p {
+            @include text(20px, 31px);
+        }
+        span {
+            @include text(16px, 25px);
+            padding-top: 20px;
+        }
+    }
+    .resources_yellow {
+        @include flex;
+        background: #fffadd;
+        width: 428px;
+        height: 760px;
+        img:nth-child(4) {
+            width: 357px;
+            height: 365px;
+            margin-top: 67px;
+        }
+        img:nth-child(1) {
+            margin: 68px 50px 30px 0;
+        }
+        p {
+            @include text(20px, 31px);
+        }
+        span {
+            @include text(16px, 25px);
+            padding-top: 20px;
+        }
+    }
+    .resources_green {
+        @include flex;
+        background: #bfede5;
+        width: 428px;
+        height: 760px;
+        img:nth-child(1) {
+            width: 357px;
+            height: 357px;
+        }
+        img:nth-child(2) {
+            margin: 56px 50px 27px 0;
+        }
+        p {
+            @include text(20px, 31px);
+        }
+        span {
+            @include text(16px, 25px);
+            padding-top: 20px;
+        }
+    }
+}
+// end resources
+
+// company
+.company {
+    display: flex;
+    justify-content: space-around;
+    padding: 104px 0 104px 0;
+}
+// end company
+
+// footer
+.footer {
+    display: flex;
+    justify-content: space-around;
+
+    .footer_content {
+        p:first-child {
+            padding-bottom: 15px;
+        }
+        p {
+            @include text(16px, 25px);
+            padding-bottom: 7px;
+        }
+    }
+
+    .footer_logo {
+        p {
+            @include text(15px, 25px);
+            padding-bottom: 7px;
+        }
+        img {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.footer_end {
+    display: flex;
+    justify-content: space-around;
+    padding: 73px 0 39px 0;
+    :nth-child(1) {
+        @include text(12px, 20px);
+    }
+    :nth-child(2) {
+        display: flex;
+        align-items: center;
+        @include text(12px, 20px);
+        p {
+            padding-right: 16px;
+        }
+    }
+    :nth-child(3) {
+        @include text(12px, 20px);
+        display: flex;
+        align-items: center;
+        h6 {
+            background: #00bb99;
+            border-radius: 9999px;
+            width: 8px;
+            height: 8px;
+            margin-right: 7px;
+        }
+    }
+}
+// end footer
